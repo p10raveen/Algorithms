@@ -3,6 +3,7 @@ package tree_implementation;
 public class TreeImp {
 	Node root;
 	TreeImp()
+	
 	{
 		root=null;
 	}
