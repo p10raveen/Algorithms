@@ -41,6 +41,40 @@ public class BST {
 
 	}
 	
+	void delete(int value)
+	{
+		root = deleteNode(root,value);
+	}
+	
+	Node deleteNode(Node root, int value)
+	{
+		if(root==null)
+		{
+			return root;
+		}
+		
+		if(value<root.data)
+		{
+			root.left = deleteNode(root.left,value);
+		}
+		else if(value>root.data)
+		{
+			root.right = deleteNode(root.right,value);
+		}
+		else
+		{
+			if(root.left==null)
+			{
+				return root.right;
+			}
+			else
+			{
+				return root.left;
+			}
+		}
+		return root;
+	}
+	
 	public static void main(String[] args) {
 		BST b = new BST();
 		// 8,3,10,1,6,4
@@ -51,6 +85,9 @@ public class BST {
 		b.insert(6);
 		b.insert(4);
 		b.printTree(); // 1 3 4 6 8 10
+		b.delete(6);
+		System.out.println();
+		b.printTree();
 	}
 
 }
