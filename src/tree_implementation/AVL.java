@@ -91,7 +91,7 @@ public class AVL {
 		if(node != null)
 		{
 			inOrder(node.left);
-			System.out.println(node.data+"\t");
+			System.out.println((node.data)+"\t");
 			inOrder(node.right);
 		}
 	}
@@ -99,15 +99,21 @@ public class AVL {
 	
 	public static void main(String[] args) {
 		AVL a = new AVL();
-		
-		a.root = a.insertNode(a.root,33);
-		a.root = a.insertNode(a.root,13);
-		a.root = a.insertNode(a.root,53);
-		a.root = a.insertNode(a.root,9);
-		a.root = a.insertNode(a.root,21);
-		a.root = a.insertNode(a.root,61);
+		// H	I	J	B	A	E	C	F	D	G	K	L 
+		//---------------------------
+		// 8	9	10	2	1	5	3	6	4	7	11	12
 		a.root = a.insertNode(a.root,8);
+		a.root = a.insertNode(a.root,9);
+		a.root = a.insertNode(a.root,10);
+		a.root = a.insertNode(a.root,2);
+		a.root = a.insertNode(a.root,1);
+		a.root = a.insertNode(a.root,5);
+		a.root = a.insertNode(a.root,3);
+		a.root = a.insertNode(a.root,6);
+		a.root = a.insertNode(a.root,4);
+		a.root = a.insertNode(a.root,7);
 		a.root = a.insertNode(a.root,11);
+		a.root = a.insertNode(a.root,12);
 		
 		a.inOrder(a.root);
 	
